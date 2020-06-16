@@ -1,0 +1,77 @@
+<!--step07_menu.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <style> 
+    header { 
+        width : 760px;
+        margin : 0 auto;
+    }
+    nav ul { 
+        list-style-type : none;
+        padding : 0;
+        margin : 0;
+    }
+    nav li { 
+        /*block요소를 옆으로 옮길려면 float*/
+        float : left;
+    }
+    nav { /* floating하는순간 감싸지 못함 그래서 
+    overflow 집어넣으면 됨*/
+        background-color: black;
+        overflow :auto;
+    }
+    nav a {
+        color : white;
+        /* 및줄 없애기  */
+        text-decoration: none;
+        /* 띄어쓰기(home,cafe etc)*/
+        padding : 10px 20px;
+        display : block;
+    }
+
+    nav a:hover {
+        /* HOME,CAFE,CONTACTS,JOIN 클릭했을때 GREY됨 */
+        color : grey;
+     }
+     section { 
+        width : 760px;
+        height : 700px;
+        margin : 0 auto;
+        background-color: black;
+        color : white;
+    }
+     footer { 
+        width : 760px;
+        height: 100px;
+        margin : 0 auto;
+        background-color: black;
+        color : white;
+        border : 1px solid white;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+               
+                <li><a href ="">Home</a></li>
+                <li><a href ="">Cafe</a></li>
+                <li><a href ="">Contacts</a></li>
+                <li><a href ="">Join</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <section>
+        section
+    </section>
+    <footer>
+           footer
+    </footer>
+</body>
+</html>

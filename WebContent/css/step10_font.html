@@ -1,0 +1,41 @@
+<!-- step10_font.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Font </title>
+    <style>
+        .one {
+            font-style :italic;
+            font-family : Arial, Helvetica, sans-serif;
+            font-size: 12px; 
+            text-decoration: underline;
+            color : red;
+         }
+         .two {
+             text-transform: capitalize;
+             letter-spacing: 5px; /* 글자간 간격 */
+             text-indent : 10px;  /*행간 간격*/
+
+             /* uppercase, capitalize*/
+         }
+         .three { 
+             text-align: center;
+         }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="one"> Pengsoo.</p>
+        <del>pengsoo</del> 
+        <!-- pengsoo에 작대기 귿는거 -->
+    </div> 
+    <div>
+        <p class="two"> &nbsp; I am a student</p>
+    </div>   <!-- &nbsp;는 들어쓰기 == text-indent-->
+    <div>
+        <p class="three">I am a student</p>
+    </div>
+</body>
+</html>

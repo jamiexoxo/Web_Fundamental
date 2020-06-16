@@ -1,0 +1,59 @@
+<!-- step07_table.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Table</title>
+    <style>
+        
+        div { 
+            margin : 0 auto;
+            width : 1000px;
+            
+        }
+        table { 
+            border : 1px solid black;
+            border-collapse: collapse;
+        }
+        td , th { 
+            border : 1px dotted black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">      <!--div로 body전체,중앙정렬 -->
+    <h3>표(table) 형식으로 정보 출력</h3>
+    <table>
+        <caption>친구 목록입니다.</caption> 
+        <!-- 보통 쓰지만 화면에는 보이지 않음. 전체 테이블 제목 -->
+     <colgroup> <!-- 을 통해 셀 크기 정함. -->
+    <col width = "100px"/>
+    <col width = "300px"/>
+    <col width = "200px"/> 
+    </colgroup>
+    <thread> <!-- 전체 제목 -->
+        <th>번호</th>
+        <th>이름</th>
+        <th>주소</th>
+
+    </thread>
+    <tbody>   <!-- 실제 컨텐츠/ 전체 내용-->
+        <tr>  <!-- tr과 td를 통해서 -->
+            <td rowspan="2">1</td>
+            <td colspan="2">손정의</td>
+            <!--<td>일본</td> -->
+             <!-- 일본을 제외하고 손정의만 다 할려면 -->
+        </tr>
+        <tr> 
+            
+            <td>게이츠</td>
+            <td>미국</td>
+        </tr>
+
+    </tbody>
+    </table>
+</div>
+
+</body>
+</html>

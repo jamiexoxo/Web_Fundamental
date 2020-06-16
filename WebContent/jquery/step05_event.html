@@ -1,0 +1,71 @@
+<!--step05_event.html--> 
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+        $(function(){ 
+               $('#sendLogin').click(function(e){
+			    //기본기능을 방지하기 위해서 사용 - e.preventDefault();
+				e.preventDefault();
+				
+				//유효성 체크 
+				//1. id값 받아오기 -id 객체 갖고오기 
+				//$('#id')이라는 element를 찾고 val로 element를 갖고오고 
+				let id = $('#id').val();
+				let pwd = $('#pwd').val();
+				//id값이 있으면 
+				if(id){   //faucy value
+					$('#errorId').hide();
+				}else {  //숨겨논 errorid를 보여주기 값이 있을때  
+					  $('#errorId').show('fast');
+					  //show.()에 slow,fast,fadeIn등 쓸수 있다. 
+					  $('#id').focus();
+					  return;
+
+				}
+				if(pwd){   //faucy value
+					$('#errorPwd').hide();
+				}else {  //숨겨논 errorid를 보여주기 값이 있을때  
+					  $('#errorPwd').show('fast');
+					  //show.()에 slow,fast,fadeIn등 쓸수 있다. 
+					  $('#Pwd').focus();
+					  return;
+
+				}
+				f.submit(); 
+			   });
+            });
+		
+    </script>
+	<style>
+		.error { 
+			display : none;
+			color : red;
+		}
+		
+	</style>
+</head>
+<body>
+	  <h3>Jquery</h3>
+	  <form action="save.html" method="post" name="f">
+		  <label for="id">아이디(필수)</label>
+		  <input type ="text" name="id" id="id"
+		  placeholder="아이디를 입력하세요">
+		  <span class="error" id="errorId">아이디를 입력하세요</span>
+		  <br>
+		  <label for="pwd">비밀번호</label>
+		  <input type ="password" name="pwd" id="pwd"
+		  placeholder="비밀번호를 입력하세요">
+		  <span class="error" id="errorPwd">비밀번호를 입력하세요</span>
+		  <br>
+		  <button type="submit" id="sendLogin"> 로그인 </button>
+		  <button type="reset"> 취소 </button>
+
+	  </form>
+	
+</body>
+</html>

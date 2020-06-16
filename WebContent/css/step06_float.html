@@ -1,0 +1,40 @@
+<!--step06_float.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float</title>
+    <style>
+         .box { 
+            width : 100px;
+            height : 100px;
+            background-color: powderblue;
+            border : 1px solid black;
+             float : left;
+         }
+         .clear { 
+             clear : both;
+         }
+         .container { /* 보이지 않음. floating하게되면 부모 요소가 보이지 않음 */
+             background-color: azure;
+             border : 1px solid black;
+             overflow: auto;  /* overflow를 쓰면 볼수 있다 */
+             padding : 10px;
+         }
+         /* 부모 - container, child - box*/
+    </style>
+</head>
+<body>
+    <div class = "container">
+    <div class ="box">div1</div>
+    <div class ="box">div2</div>
+    <div class ="box">div3</div>
+    <div class ="box">div4</div>
+    <div class ="box">div5</div>
+    <div class ="clear">div6</div>
+    <div>div7</div>
+</div>
+
+</body>
+</html>

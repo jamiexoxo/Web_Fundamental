@@ -1,0 +1,89 @@
+ <!-- step-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get</title>
+    <script type ="text/javascript" src="../jquery/jquery-3.5.1.js"></script>
+    <script>
+
+
+
+        $(function(){ //window.upload - jquery 
+              $('#btn').click(function(){
+                 $.ajax({    //{} : object
+                 url : 'json_data.json',
+                 type : 'GET',
+                 dataType : 'json',
+                 error : function(){
+                    alert('error');
+                 },
+                 success : function(obj){  //성공하면 매개변수에 json
+                    //성공하면 obj의 객체가 다 나옴. 
+                    /*console.log(json);
+                     console.log(typeof json);
+                    */
+                    const listArray = obj.cafelist; 
+
+                            //문자열 선언 - primitive - let
+                            // open API 에서 사용
+
+                            let message = "<ul>";
+
+                        for(let i=0;i<listArray.length;i++){
+                            const listObj = listArray[i];
+                            let name = listObj.name;
+                            let clubid = listObj.clubid;
+                            //3.
+                            message += "<li>"+name+"("+clubid+")</li>";
+                        } 
+                        message += "</ul>"; //문자열 선언한것 붙이는 방법2.  
+                        $("#sel").append(message); //div에 append하면 dl-li폴더안에 쭈욱 들어감
+                        //message에 값이 이미 있으니까 
+                    }
+                 
+                  });
+
+                  /*     
+                   xhr.onreadystatechange = function(){
+                       if(xhr.readyState ==4 && xhr.status ==200){
+                        console.log(typeof xhr.responseText);
+                        console.log(xhr.responseText);
+                        //문자열을 javascript 객체로 변환
+                        const obj = JSON.parse(xhr.responseText);
+                        // 1 select date - cafelist 변수가 obj
+                        const listArray = obj.cafelist; 
+
+                            //문자열 선언 - primitive - let
+                            // open API 에서 사용
+
+                            let message = "<ul>";
+
+                        for(let i=0;i<listArray.length;i++){
+                            const listObj = listArray[i];
+                            let name = listObj.name;
+                            let clubid = listObj.clubid;
+                            //3.
+                            message += "<li>"+name+"("+clubid+")</li>";
+                        } 
+                        message += "</ul>"; //문자열 선언한것 붙이는 방법2.  
+                        $("#sel").append(message); //div에 append하면 dl-li폴더안에 쭈욱 들어감
+                        //message에 값이 이미 있으니까 
+                    }
+                   }
+                */
+              });
+        });
+
+
+ </script>
+</head>
+<body>
+      <button id ="btn">가져오기</button>
+      <div id= "sel">
+               
+      </div>
+      
+</body>
+</html>

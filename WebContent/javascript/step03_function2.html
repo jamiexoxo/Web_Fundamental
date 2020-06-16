@@ -1,0 +1,61 @@
+<!-- step03_function2.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Function </title>
+    <script>
+       //생성자 함수 - 값이 확정되지 않으면 쓰임. 
+       const Student = function(name, korean, math) { 
+           this.name = name;
+           this.korean = korean;
+           this.math = math;
+           this.getSum = function() {
+               return this.korean + this.math;
+           }
+       }
+
+       const s1 = new Student('펭수',90,90);
+       console.log(s1.name);
+       console.log(s1.getSum());
+       console.log(typeof s1); //object
+       console.log(s1);
+       //Student object를 확장하기 위해서는 prototype으로 확장 
+       //함수를 추가 - 평균만들기 
+       Student.prototype.getAvg = function(){
+           return (this.korean + this.math)/2;
+
+       }
+       console.log(s1.getAvg());
+       
+        
+        //일반적 표현 - 이 값들이 확정될때는 씀. 
+       const s2 = {
+           "name" : "펭수",
+           "korean" : 90,
+           "math" : 90,
+           "getSum" : function() {
+               return this.korean + this.math;
+           }
+       }
+       console.log(typeof s2);
+       console.log(s2);
+
+       let sObj = " this is the string    "; //앞뒤 공백 제거 원할려면? 못함. 함수 만들면 됨
+       
+       String.prototype.trim = function(){
+           return this.replace(/(^\s*)|(\s*$)/gi,""); 
+       }
+
+       let str = sObj.trim();
+
+       console.log("-------" +str+"---------");
+    </script>
+
+  
+</head>
+<body>
+    
+</body>
+</html>

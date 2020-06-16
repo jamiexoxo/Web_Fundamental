@@ -1,0 +1,33 @@
+
+<!-- step03_crossdomain.html 
+
+ 필요없음. 그냥 ajax로 서로다른 domain정보를 요청할 수 없음.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get</title>
+    <script type="text/javascript" src="../jquery/jquery-3.5.1.js"></script>
+    <script>
+        window.onload = function(){
+            loadScript('http://www.acornacademy.co.kr/blockchain/naver_json.jsp?call=test');
+        }
+        //url의 jsp를 지원해야 되는데 없으면 이것은 쓸수 없음.
+        function test(obj){
+            $('#sel').append(JSON.stringify(obj));
+        }
+        function loadScript(url){
+            var dScript = document.createElement('script');
+            dScript.src = url;
+            document.body.appendChild(dScript);
+        }
+    </script>
+</head>
+<body>
+    <div id="sel">
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!--step04_manipulation.html--> 
+
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+ 
+		$(function(){
+			//$('p').prepend('<strong> Hi </strong>');
+			//$('<strong> Hi </strong>').prependTo('p');
+
+
+				//$('p').append('<strong> Hi </strong>');
+			//$('<strong> Hi </strong>').appendTo('p');
+			//$('p').after('<strong>Hi</strong>');
+			//$('p').before('<strong>Hi</strong>');
+			
+			//2. TEXT - 안에 text만, html은 안에 태그 안식가능하게 할수 있음.
+			//$('p').text('제이쿼리'); //body안에jquery를 바꿀려고 할때 
+			//$('p').text('<strong>Hi</strong>');// 값 : '<strong>Hi</strong>'나옴.
+            //$('p').html('<strong>Hi</strong>');// 값 : hi 나옴.
+			
+			 $('p').html('<strong>제이쿼리</strong>');
+			 //3. <p>jQuery</p> 값을 갖고오고 싶다면? 
+			 //let msg1 = $('p').text(); 
+			 //let msg2 = $('p').html(); 
+			 //console.log(msg1);
+			 //console.log(msg2);
+
+			 //4. Wrapping jquery안에 박스 만들게 가능
+			 $('p').wrap('<div/>'); //div가 <p>jquery<p>감싸게 가능 
+
+			//5. 지우는거 
+			//$('p').remove();
+			//$('p').detach();
+			//$('p').empty(); //element안에 다 지워지는 것. 
+
+
+		});
+    </script>
+	<style>
+		div {
+			border : 1px solid blue;
+		}
+		p {
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+    <p>jQuery</p>
+	<div id="aa">
+		<div>
+			<div>M</div>
+		</div>
+	</div>
+	
+</body>
+</html>

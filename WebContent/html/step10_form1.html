@@ -1,0 +1,37 @@
+<!-- step10-_form1.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+       .container { 
+           margin : 10px auto; 
+           
+       }
+
+    </style>
+</head>
+<body>
+    <!-- 중앙배치 위해 div -->
+    <div class = "container">
+<h3> 폼 요소 작성 </h3>
+<form action ="save.html" method = "get"> 
+    <!-- label for id : 반드시 지켜서 코딩-->
+    <label for = "email"> 이메일 </label>
+    <input type = "text" name ="email2" id ="email"> 
+    <!--name은 parameter의 key값. 
+    일반적으로 text로 많이 쓰임. input type = "email"에 email or search,text을 써도 됨.
+통상적으로 text많이 씀. email - error체크 해준다.  --> 
+    <label for = "pwd"> 비밀번호 </label>
+    <input type = "password" name ="pwd2" id ="pwd"> 
+    <button type = "submit"> 로그인 </button>
+    <button type = "reset"> 취소</button> 
+</form>
+
+
+
+</div>
+</body>
+</html>

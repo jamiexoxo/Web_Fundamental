@@ -1,0 +1,41 @@
+<!--step11_weight.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            background-color: yellow; /* 요소 선택자 1점*/
+        }
+        ul li{ 
+          background-color: green; /* 2점 */
+        }
+        .active { 
+            background-color: blue; /* 클래스 선택자 10점 */
+        }
+        #one {
+            background-color: brown !important; /* ID 선택자 : 100점*/
+        }
+        #one {
+            background-color: brown !important; /* ID 선택자 : 100점*/
+            /* !important : 10000점*/
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class = "wrapper">
+        <div class ="nav">
+            <ul>
+                <!--인라인 스타일 : 1000점/ !important - 10100점 --> 
+                <li class ="active" id = "one"
+                 style="background-color: red !important"> 하나 </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

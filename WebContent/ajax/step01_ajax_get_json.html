@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Get</title>
+    <script type ="text/javascript" src="../jquery/jquery-3.5.1.js"></script>
+    <script>
+        var xhr;
+        if(window.XMLHttpRequest){
+            //모질라, 사파리, 크롬. IE+7 - 모든브라우저 
+            xhr = new XMLHttpRequest();
+        }else { 
+            //IE 6 이하 
+            xhr = new ActiveXObject("microsoft.XMLHTTP");
+        }
+        if(xhr == null){
+            alert("Error create xhr object");
+        }
+        //EVENT - BUTTON 
+        $(function(){ //window.upload - jquery 
+              $('#btn').click(function(){
+                   let url ='json_data.json';
+                   xhr.open('GET',url,true);
+                   //ajax로 데이터를 요청
+                   xhr.send(null);
+                   //ajax로 요청한 데이터를 받는 함수 
+                   xhr.onreadystatechange = function(){
+                       if(xhr.readyState ==4 && xhr.status ==200){
+                        console.log(typeof xhr.responseText);
+                        console.log(xhr.responseText);
+                        //문자열을 javascript 객체로 변환
+                        const obj = JSON.parse(xhr.responseText);
+                        // 1 select date - cafelist 변수가 obj
+                        const listArray = obj.cafelist; 
+
+                            //문자열 선언 - primitive - let
+                            // open API 에서 사용
+
+                            let message = "<ul>";
+
+                        for(let i=0;i<listArray.length;i++){
+                            const listObj = listArray[i];
+                            let name = listObj.name;
+                            let clubid = listObj.clubid;
+                            //3.
+                            message += "<li>"+name+"("+clubid+")</li>";
+                        } 
+                        message += "</ul>"; //문자열 선언한것 붙이는 방법2.  
+                        $("#sel").append(message); //div에 append하면 dl-li폴더안에 쭈욱 들어감
+                        //message에 값이 이미 있으니까 
+                    }
+                   }
+                
+              });
+        });
+
+
+ </script>
+</head>
+<body>
+      <button id ="btn">가져오기</button>
+      <div id= "sel">
+               
+      </div>
+      
+</body>
+</html>
